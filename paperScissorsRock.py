@@ -12,6 +12,11 @@
 #   - lizard poisons spock
 #   - paper disproves spock
 #   - spock vaporises rock
+# 4. Add event handler to catch ctrl+c
+#   - Make it print a nice message saying who is winning
+#   - Ask if the users really wants to quit
+#   - If yes, exit with no errors
+#   - If no, continue the game
 
 
 import random

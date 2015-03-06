@@ -5,7 +5,7 @@ about Git and Python!
 ## Before you start
 1. Install git and python
 
-    sudo apt-get install git python
+        sudo apt-get install git python
     
 
 ## Getting Started
@@ -15,11 +15,11 @@ about Git and Python!
 3. Copy the 'ssh clone url' from your new GitHub Repository
 4. Open a terminal and paste the url to the end of the following command:
 
-    git clone <paste url here>
+        git clone <paste url here>
 
 5. `cd` into the project and run the game:
 
-    python paperScissorsRock.py
+        python paperScissorsRock.py
 
 
 ## Updating the game
@@ -27,12 +27,12 @@ about Git and Python!
 2. Implement it
 3. Add the changes to your `git staging area`:
 
-    git add .
+        git add .
 
 4. Commit your changes
 
-    git commit -m "<your commit message here>"
+        git commit -m "<your commit message here>"
 
 5. Push your changes to your remote repository
 
-    git push
+        git push
