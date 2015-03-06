@@ -25,26 +25,63 @@ def computeWinner(choice1, choice2):
             return 'scissors'
 
 
-def game():
-    valid_choices = ['rock', 'paper', 'scissors']
-    user_choice = raw_input('Choose paper, scissors or rock: ')
+def getUserChoice(choices):
+    message = 'Choose one of ' + str(choices) + ': '
+    user_choice = raw_input(message)
 
-    while (user_choice not in valid_choices):
+    while (user_choice not in choices):
         user_choice = raw_input('That is not a valid choice, try again: ')
+
+    return user_choice
+
+
+def game_start(first_to):
+    print 'Let\' play paper, scissors, rock!'
+    print 'First to ' + str(first_to) + ' wins'
+    print ''
+    valid_choices = ['rock', 'paper', 'scissors']
+    user_score = 0
+    computer_score = 0
+    while (user_score < first_to and computer_score < first_to):
+        winner = game(valid_choices)
+        if (winner == 'user'):
+            user_score += 1
+        elif (winner == 'computer'):
+            computer_score += 1
+        print ''
+        print 'Scores:'
+        print '  You: ' + str(user_score)
+        print '  Computer: ' + str(computer_score)
+
+    print ''
+    if user_score == first_to:
+        print 'You win the game! :D'
+    else:
+        print 'Game Over. You lose :('
+
+
+def game(valid_choices):
+    user_choice = getUserChoice(valid_choices)
 
     rand = random.randint(0, 2)
     computer_choice = valid_choices[rand]
 
-    winner = computeWinner(user_choice, computer_choice)
+    winning_choice = computeWinner(user_choice, computer_choice)
 
+    print ''
     print 'You: ' + user_choice
     print 'Computer: ' + computer_choice
-    if (winner == 'tie'):
+    if (winning_choice == 'tie'):
         print 'The game is tied.'
+        return 'tie'
+    elif (winning_choice == user_choice):
+        print 'You win!'
+        return 'user'
     else:
-        print winner + ' wins!'
+        print 'The computer wins!'
+        return 'computer'
 
 
 if __name__ == '__main__':
-    while(True):
-        game()
+    first_to = 3
+    game_start(first_to)
