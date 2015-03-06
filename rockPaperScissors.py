@@ -1,6 +1,21 @@
 #!/usr/bin/python
 
+# TODO: 
+# 1. We need to get first_to from the command line
+#   so the game can be customised
+# 2. Add lizard
+#   - scissors decapitates lizard
+#   - lizard eats paper
+#   - rock crushes lizard
+# 3. Add spock
+#   - spock smashes scissors
+#   - lizard poisons spock
+#   - paper disproves spock
+#   - spock vaporises rock
+
+
 import random
+
 
 def computeWinner(choice1, choice2):
     if (choice1 == choice2):
@@ -35,19 +50,23 @@ def getUserChoice(choices):
     return user_choice
 
 
-def game_start(first_to):
+def game_start():
+    first_to = 3
     print 'Let\' play paper, scissors, rock!'
     print 'First to ' + str(first_to) + ' wins'
     print ''
+
     valid_choices = ['rock', 'paper', 'scissors']
     user_score = 0
     computer_score = 0
+
     while (user_score < first_to and computer_score < first_to):
         winner = game(valid_choices)
         if (winner == 'user'):
             user_score += 1
         elif (winner == 'computer'):
             computer_score += 1
+
         print ''
         print 'Scores:'
         print '  You: ' + str(user_score)
@@ -83,5 +102,4 @@ def game(valid_choices):
 
 
 if __name__ == '__main__':
-    first_to = 3
-    game_start(first_to)
+    game_start()
