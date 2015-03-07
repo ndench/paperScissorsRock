@@ -24,15 +24,24 @@ about Git and Python!
 
 ## Updating the game
 1. Pick an item from the TODO list in `paperScissorsRock.py`
-2. Implement it
-3. Add the changes to your `git staging area`:
+2. Create a feature branch
+    
+        git checkout -b <your feature name>
+
+3. Implement it
+4. Add the changes to your `git staging area`:
 
         git add .
 
-4. Commit your changes
+5. Commit your changes
 
         git commit -m "<your commit message here>"
 
-5. Push your changes to your remote repository
+6. Merge your feature into the master branch
 
+        git merge master
+
+6. Push your changes to your remote repository master branch
+
+        git checkout master
         git push

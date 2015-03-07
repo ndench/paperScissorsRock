@@ -17,6 +17,9 @@
 #   - Ask if the users really wants to quit
 #   - If yes, exit with no errors
 #   - If no, continue the game
+# 5. Add an option to quit the game
+#   - Put a notice in the prompt saying that a certain key will quit
+#   - Make it do the same thing as the event handler
 
 
 import random
